@@ -22,6 +22,8 @@ import '../stylesheets/application'
 require("trix")
 require("@rails/actiontext")
 
+import Sortable from "sortablejs";
+
 
 document.addEventListener('turbolinks:load', () => {
     document.addEventListener('click', () => {
@@ -42,5 +44,8 @@ document.addEventListener('turbolinks:load', () => {
         element.classList.add('d-none')
         element.previousElementSibling.classList.remove('d-none')
     })
+
+    let element = document.getElementById('elements')
+    Sortable.create(elements, { animation: 150 })
 })
 import "controllers"
